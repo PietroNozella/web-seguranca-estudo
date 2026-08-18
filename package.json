@@ -1,0 +1,13 @@
+{
+  "name": "laboratorio-sessoes-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Laboratório local e seguro para estudar login, sessão e cookies.",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-session": "^1.18.2"
+  }
+}

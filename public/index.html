@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laboratório de Sessões</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <main class="card">
+      <p class="eyebrow">Laboratório local</p>
+      <h1>Login e cookies de sessão</h1>
+      <p>Use uma conta fictícia para observar uma sessão web com segurança.</p>
+      <form action="/login" method="post">
+        <label>Usuário <input name="username" autocomplete="username" required></label>
+        <label>Senha <input name="password" type="password" autocomplete="current-password" required></label>
+        <button type="submit">Entrar</button>
+      </form>
+      <p class="hint">Conta de teste: <code>aluno</code> / <code>rede-segura</code></p>
+      <p id="error" class="error" hidden>Credenciais inválidas. Tente novamente.</p>
+    </main>
+    <script>
+      if (new URLSearchParams(location.search).get('erro')) {
+        document.querySelector('#error').hidden = false;
+      }
+    </script>
+  </body>
+</html>

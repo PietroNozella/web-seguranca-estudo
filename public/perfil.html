@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sessão ativa</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <main class="card">
+      <p class="eyebrow">Rota protegida</p>
+      <h1>Sessão ativa</h1>
+      <p>O servidor autorizou esta página porque recebeu o cookie de sessão.</p>
+      <section>
+        <h2>Eventos do servidor</h2>
+        <ul id="events"></ul>
+      </section>
+      <form action="/logout" method="post"><button type="submit">Encerrar sessão</button></form>
+      <p class="hint">Abra F12 → Network e Application → Cookies. Não compartilhe o valor do cookie.</p>
+    </main>
+    <script>
+      fetch('/api/eventos')
+        .then((response) => response.json())
+        .then((events) => {
+          document.querySelector('#events').innerHTML = events
+            .map((event) => `<li><time>${event.time}</time> ${event.message}</li>`)
+            .join('');
+        });
+    </script>
+  </body>
+</html>
