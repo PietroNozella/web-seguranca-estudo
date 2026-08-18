@@ -6,9 +6,10 @@ Trilha prática usando o laboratório local. Ritmo: **30–60 min por dia**.
 
 1. Leia a teoria curta da lição (10 min).
 2. Execute a prática passo a passo no laboratório (20–40 min).
-3. Responda as perguntas de verificação no final da lição.
-4. Escreva com suas palavras o que aprendeu — mesmo que 3 frases.
-5. Se travar em algum passo, releia a teoria em vez de pular direto pra solução.
+3. Leia a seção **Código: a falha e a correção** — o trecho vulnerável do `server.js` explicado em JS, lado a lado com a versão correta.
+4. Responda as perguntas de verificação no final da lição.
+5. Escreva com suas palavras o que aprendeu — mesmo que 3 frases.
+6. Se travar em algum passo, releia a teoria em vez de pular direto pra solução.
 
 ## Trilha
 

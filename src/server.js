@@ -16,7 +16,9 @@ app.use(
   session({
     secret: 'laboratorio-local-nao-use-em-producao',
     resave: false,
-    saveUninitialized: false,
+    // LIÇÃO 02 (vulnerável): emite cookie para qualquer visitante, mesmo sem login.
+    // Isso permite a fixação de sessão. Será corrigido na Lição 05 com regenerate().
+    saveUninitialized: true,
     cookie: {
       httpOnly: true,
       sameSite: 'lax',
