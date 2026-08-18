@@ -28,6 +28,15 @@ O conteúdo de segurança fica na pasta `estudos/`:
 - `licao-XX-*.md` — cada lição traz teoria curta, prática passo a passo no laboratório, a seção **"Código: a falha e a correção"** (trecho vulnerável vs. versão correta, explicado em JS) e perguntas de verificação
 - `diario.md` — registro diário do que foi feito, aprendido e das perguntas em aberto
 
+## Progresso
+
+- [x] **Lição 01 — Sequestro de sessão** (17/08/2026): roubei o cookie `connect.sid` entre navegadores e entrei em `/perfil` sem senha. Aprendi que o servidor confia cegamente no cookie — a senha só vale no login; depois, o cookie é a identidade. Diário: `estudos/diario.md`
+- [x] **Lição 02 — Fixação de sessão** (17/08/2026): com `saveUninitialized: true`, o atacante entrega o crachá e a vítima o autentica — o `sid` não é regenerado no login. Aprendi que a correção é `request.session.regenerate()` no `POST /login`. Diário: `estudos/diario.md`
+- [ ] Lição 03 — CSRF
+- [ ] Lição 04 — XSS
+- [ ] Lição 05 — Endurecimento (corrigir `saveUninitialized` + `regenerate()`)
+- [ ] Lição 06 — Mapeamento OWASP Top 10
+
 ## Avisos
 
 - O laboratório é **vulnerável de propósito** durante o estudo: `saveUninitialized: true` está ativo (Lição 02) para permitir a demonstração de fixação de sessão. A correção faz parte da Lição 05.
